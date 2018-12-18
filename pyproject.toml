@@ -15,6 +15,7 @@ python = "^3.6"
 pytest = "^4.0"
 pre-commit = "^1.12"
 tox = "^3.6"
+pytest-django = "^3.4"
 
 [tool.black]
 line-length = 79
