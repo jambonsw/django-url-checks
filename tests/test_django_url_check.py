@@ -1,7 +1,8 @@
 """Tests for django-url-check"""
-from django_url_check import __version__
+import django_url_check
 
 
 def test_version():
     """Check that package has a version"""
-    assert __version__ == "0.1.0"
+    assert hasattr(django_url_check, "__version__")
+    assert isinstance(django_url_check.__version__, str)
