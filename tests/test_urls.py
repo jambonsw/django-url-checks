@@ -1,7 +1,7 @@
 """Test behavior around URIs"""
 from re import compile as re_compile, search
 
-from django.core.checks import Error
+from django.core.checks import Critical, Error
 from pytest import mark
 
 from django_url_check import check_url
@@ -67,10 +67,22 @@ def test_invalid_nested_path():
     message_list = check_url()
     expected_msg = MESSAGES.NO_SLASH_PATTERN().msg
     pattern = re_compile('named "(more[34]:)?nested_1"$')
-    assert len(message_list) == 4, "4 includes should result in 4 messages" ""
+    assert len(message_list) == 4, "4 includes should result in 4 messages"
     for message in message_list:
         assert isinstance(message, Error) is True, "Wrong Message level used"
         assert message.msg == expected_msg, "Wrong Message displayed"
         assert pattern.search(
             message.hint
         ), f'Hint "{message.hint}" does not provide name of path'
+
+
+@mark.override_settings(ROOT_URLCONF="tests.fixtures.invalid_conf")
+def test_invalid_conf():
+    """Configuration with non-URLPattern/Resolver returns error"""
+    message_list = check_url()
+    expected_msg = MESSAGES.URLCONF_UNKNOWN_TYPE().msg
+    assert len(message_list) == 1, "One message should be returned"
+    message = message_list[0]
+    assert isinstance(message, Critical) is True, "Wrong Message level used"
+    assert message.msg == expected_msg, "Wrong Message displayed"
+    assert message.hint is None

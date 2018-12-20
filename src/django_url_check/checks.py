@@ -68,6 +68,8 @@ def _check_path_tree(url_tree, namespace=None):
             if msg:
                 errors.append(msg)
             errors.extend(_check_path_tree(path.url_patterns, new_namespace))
+        else:
+            errors.append(MESSAGES.URLCONF_UNKNOWN_TYPE())
     return errors
 
 

@@ -42,6 +42,12 @@ CRITICAL_PROTO_MSG = [
         " urlpatterns with a list of URL paths.  (e.g.: urlpatterns=["
         'path("", home_view, name="home")]',
     ),
+    ProtoMsg(
+        "URLCONF_UNKNOWN_TYPE",
+        "Your URL configuration tree contains an unknwon type."
+        " Only expected use of path() and include()",
+        None,
+    ),
 ]
 
 ERROR_PROTO_MSG = [

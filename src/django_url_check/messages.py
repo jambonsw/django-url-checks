@@ -26,6 +26,8 @@ def get_message_letter(Message):
         return "I"
     elif Message is Debug:
         return "D"
+    else:
+        raise KeyError()
 
 
 def omit_keys(*args):
