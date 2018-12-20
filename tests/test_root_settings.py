@@ -2,8 +2,8 @@
 from django.core.checks import Critical
 from pytest import mark, param
 
-from django_url_check import check_url
-from django_url_check.messages import MESSAGES
+from url_checks import check_url
+from url_checks.messages import MESSAGES
 
 
 @mark.parametrize(

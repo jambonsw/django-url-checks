@@ -1,12 +1,15 @@
 [tool.poetry]
-name = "django-url-check"
+name = "django-url-checks"
 version = "0.1.0"
-description = "Django Check ensures URL paths end with a slash"
+description = "Django checks to ensure valid URL Configurations"
 keywords = ["django", "check", "url", "uri", "slash"]
 authors = ["Andrew Pinkham <code@andrewsforge.com>"]
 license = "BSD-2-Clause"
 readme = "README.md"
-repository = "https://github.com/jambonsw/django-url-check"
+repository = "https://github.com/jambonsw/django-url-checks"
+packages = [
+    { include = "url_checks", from = "src" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"

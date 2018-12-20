@@ -8,7 +8,7 @@ from django.core.checks import (
 )
 from pytest import mark, param
 
-from django_url_check.messages import get_message_letter
+from url_checks.messages import get_message_letter
 
 
 @mark.parametrize(

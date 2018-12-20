@@ -1,12 +1,12 @@
 [paths]
 source =
-    src/django_url_check
-    */site-packages/django_url_check
+    src/url_checks
+    */site-packages/url_checks
 
 [run]
 branch = true
 parallel = true
-source = django_url_check
+source = url_checks
 
 [report]
 show_missing = true

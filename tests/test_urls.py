@@ -4,8 +4,8 @@ from re import compile as re_compile, search
 from django.core.checks import Critical, Error
 from pytest import mark
 
-from django_url_check import check_url
-from django_url_check.messages import MESSAGES
+from url_checks import check_url
+from url_checks.messages import MESSAGES
 
 
 def test_valid_check():
