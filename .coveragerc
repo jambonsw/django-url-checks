@@ -1,0 +1,13 @@
+[paths]
+source =
+    src/django_url_check
+    */site-packages/django_url_check
+
+[run]
+branch = true
+parallel = true
+source = django_url_check
+
+[report]
+show_missing = true
+precision = 2
