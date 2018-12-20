@@ -54,7 +54,7 @@ def build_messages(app_name, Message, message_list):
 class Messages:
     """Singleton container for all messages"""
 
-    def __init__(self, app_name="url_check"):
+    def __init__(self, app_name="url_checks"):
         self._messages = dict(  # this construction ensures no duplicate keys
             **build_messages(app_name, Critical, CRITICAL_PROTO_MSG),
             **build_messages(app_name, Error, ERROR_PROTO_MSG),
