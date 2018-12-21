@@ -10,6 +10,13 @@ repository = "https://github.com/jambonsw/django-url-checks"
 packages = [
     { include = "url_checks", from = "src" }
 ]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Django :: 2.1",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
