@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-url-checks"
-version = "0.1.0"
+version = "0.2.0"
 description = "Django checks to ensure valid URL Configurations"
 keywords = ["django", "check", "url", "uri", "slash"]
 authors = ["Andrew Pinkham <code@andrewsforge.com>"]
